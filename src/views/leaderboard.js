@@ -36,9 +36,7 @@ const Leaderboard: () => React$Node = () => {
       data.getHighScore({setState}).then(scores => {
         let board = [];
         for (var item in scores) {
-          if (scores[item]) {
-            board.push({id: item, value: scores[item]});
-          }
+          board.push({id: item, value: scores[item]});
         }
         setBoard(board);
       });

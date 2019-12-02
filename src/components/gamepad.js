@@ -15,20 +15,20 @@ import {ATTACK_CLEAR_DURATION, CONTROLLER_BOTTOM_POSITION} from 'logic';
 const GamePad: () => React$Node = () => {
   const [{attack, settings}, setState] = useStateValue();
   const onHandlerStateChange = ({nativeEvent}) => {
-    if (nativeEvent.state === State.ACTIVE && !attack) {
+    if (!attack && nativeEvent.state === State.ACTIVE) {
       setState({attack: true});
       settings?.sound && sound('attack');
       setTimeout(() => setState({attack: false}), ATTACK_CLEAR_DURATION);
-    } else {
-      settings?.sound && sound('cooldown');
+      return;
     }
+    settings?.sound && sound('cooldown');
   };
 
   return (
     <TapGestureHandler
       onHandlerStateChange={onHandlerStateChange}
       minDurationMs={100}>
-      <Animated.View style={[styles.container]} />
+      <Animated.View style={styles.container} />
     </TapGestureHandler>
   );
 };

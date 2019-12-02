@@ -16,18 +16,14 @@ export default () => {
 
   useEffect(
     () => {
-      if (data.scene !== 'Game') {
-        data.getHighScore({setState});
-      }
+      data.scene !== 'Game' && data.getHighScore({setState});
     },
     [setState],
     [],
   );
 
   useMemo(() => {
-    if (kills > highScore) {
-      data.setHighScore({kills, setState});
-    }
+    kills > highScore && data.setHighScore({kills, setState});
   }, [kills, highScore, setState]);
 
   return renderIf(

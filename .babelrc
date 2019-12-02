@@ -1,0 +1,25 @@
+{
+  "presets": ["module:metro-react-native-babel-preset"],
+  "plugins": [
+    ["@babel/plugin-transform-flow-strip-types"],
+    ["@babel/plugin-proposal-export-namespace-from"],
+    ["@babel/plugin-proposal-decorators", {"legacy": true}],
+    ["@babel/plugin-proposal-class-properties", {"loose": true}],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "views": "./src/views",
+          "logic": "./src/logic",
+          "components": "./src/components",
+          "utils": "./src/utils",
+          "state": "./src/state",
+          "assembly": "./src/assembly",
+          "build": "./src/build",
+          "assets": "./src/assets",
+          "style": "./src/style"
+        }
+      }
+    ]
+  ]
+}

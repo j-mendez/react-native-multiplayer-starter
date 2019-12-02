@@ -9,6 +9,7 @@ import React, {useMemo, useEffect} from 'react';
 import {Text, StyleSheet} from 'react-native';
 import {useStateValue} from 'state';
 import {data} from 'logic';
+import {renderIf} from 'utils';
 
 export default () => {
   const [{kills, highScore, scene}, setState] = useStateValue();
@@ -19,8 +20,7 @@ export default () => {
         data.getHighScore({setState});
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
+    [setState],
     [],
   );
 
@@ -30,9 +30,10 @@ export default () => {
     }
   }, [kills, highScore, setState]);
 
-  return scene !== 'Game' && highScore ? (
-    <Text style={styles.text}>High Score {highScore}</Text>
-  ) : null;
+  return renderIf(
+    scene !== 'Game' && highScore,
+    <Text style={styles.text}>High Score {highScore}</Text>,
+  );
 };
 
 const styles = StyleSheet.create({

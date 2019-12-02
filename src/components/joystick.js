@@ -47,17 +47,7 @@ const JoyStick: () => React$Node = () => {
       onGestureEvent={joyStickGestureEvent}
       onHandlerStateChange={joyStickHandlerChange}>
       <Animated.View style={styles.container}>
-        <Animated.View
-          style={[
-            styles.subContainer,
-            {
-              transform: [
-                {translateX: joyStickTranslateX},
-                {translateY: joyStickTranslateY},
-              ],
-            },
-          ]}
-        />
+        <Animated.View style={styles.subContainer} />
       </Animated.View>
     </PanGestureHandler>
   );
@@ -83,6 +73,10 @@ const styles = StyleSheet.create({
     height: 35,
     backgroundColor: 'rgba(30,30,30,0.5)',
     opacity: 0.1,
+    transform: [
+      {translateX: joyStickTranslateX},
+      {translateY: joyStickTranslateY},
+    ],
   },
 });
 

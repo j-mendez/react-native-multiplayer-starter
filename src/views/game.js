@@ -76,7 +76,7 @@ const Game: () => React$Node = () => {
   );
 
   const gameCommenced =
-    state?.playerData && Object.keys(state?.playerData).length;
+    state?.playerData && Object.keys(state?.playerData).length > 1;
 
   return (
     <View style={containerStyle.base}>

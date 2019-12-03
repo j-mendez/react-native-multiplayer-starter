@@ -4,7 +4,6 @@
  * @format
  * @flow
  */
-
 import localStorage from './local-storage';
 
 export const skinMap = {

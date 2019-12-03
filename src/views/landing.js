@@ -15,9 +15,11 @@ import {MENU_DATA} from 'logic';
 import {getSkins, getSettings, keyExtractor} from 'utils';
 import {name as appName} from '../../app.json';
 
-function MenuItem({item: {name, scene}, index, setState}) {
+function MenuItem({item: {name, scene, onPress}, index, setState}) {
   return (
-    <Button onPress={() => setState({scene})} {...menuButtonStyle}>
+    <Button
+      onPress={() => (onPress && onPress()) || setState({scene})}
+      {...menuButtonStyle}>
       {name}
     </Button>
   );

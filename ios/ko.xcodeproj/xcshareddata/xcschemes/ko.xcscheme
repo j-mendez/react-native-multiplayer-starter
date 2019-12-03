@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "KO.app"
+               BuildableName = "KOED.app"
                BlueprintName = "ko"
                ReferencedContainer = "container:ko.xcodeproj">
             </BuildableReference>
@@ -59,7 +59,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "KO.app"
+            BuildableName = "KOED.app"
             BlueprintName = "ko"
             ReferencedContainer = "container:ko.xcodeproj">
          </BuildableReference>
@@ -78,7 +78,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -92,7 +92,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "KO.app"
+            BuildableName = "KOED.app"
             BlueprintName = "ko"
             ReferencedContainer = "container:ko.xcodeproj">
          </BuildableReference>
@@ -109,7 +109,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "KO.app"
+            BuildableName = "KOED.app"
             BlueprintName = "ko"
             ReferencedContainer = "container:ko.xcodeproj">
          </BuildableReference>

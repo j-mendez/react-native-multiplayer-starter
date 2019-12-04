@@ -48,7 +48,7 @@ const Game: () => React$Node = () => {
         data.closeLobby();
         oldKills = 0;
         setState({kills: 0, playerData: undefined, hp: 3});
-        if (Math.random() >= 0.5 || gameplayCount === 1) {
+        if (gameplayCount % 3 || gameplayCount === 1) {
           loadAd();
         }
       };
@@ -76,7 +76,7 @@ const Game: () => React$Node = () => {
   );
 
   const gameCommenced =
-    state?.playerData && Object.keys(state?.playerData).length > 1;
+    state?.playerData && Object.keys(state?.playerData).length;
 
   return (
     <View style={containerStyle.base}>

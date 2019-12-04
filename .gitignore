@@ -61,7 +61,7 @@ buck-out/
 
 # production bundle
 
-dist/
+dist
 
 .env
 .env.production

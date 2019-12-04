@@ -40,6 +40,10 @@ To change the firebase config location updated the google-services.json file for
 Web support aims for native speed so we try to use webassembly for this (Web support is in progress).
 For more info check out [assemblyscript](https://github.com/AssemblyScript/assemblyscript)
 
+## Serverless
+
+All game logic is handled inside the application without any servers outside of firebase realtime database.
+
 ## Game Configuration
 
 You can adjust most of the game settings at `/src/logic` directory.

@@ -16,21 +16,38 @@ const gameLoop = ({state, setState}) =>
     if (!playerData) {
       return;
     }
+
+    let envPosition;
+    let environment;
+    let userEnvHost;
+
+    const players =
+      typeof playerData === 'object' &&
+      Object.keys(playerData)
+        .filter((key, i) => {
+          if (i === 0) {
+            userEnvHost = true;
+            envPosition = playerData[key].envPosition;
+            environment = playerData[key].environment;
+          }
+          return key !== data.getUser;
+        })
+        .reduce((obj, key) => {
+          obj[key] = playerData[key];
+          return obj;
+        }, {});
+
     requestIdleCallback(() =>
       setState({
-        playerData:
-          typeof playerData === 'object' &&
-          Object.keys(playerData)
-            .filter(key => key !== data.getUser)
-            .reduce((obj, key) => {
-              obj[key] = playerData[key];
-              return obj;
-            }, {}),
+        playerData: players,
         kills:
           playerData.hasOwnProperty(data.getUser) &&
           playerData[data.getUser].hasOwnProperty('kills')
             ? playerData[data.getUser].kills
             : 0,
+        envPosition,
+        environment,
+        userEnvHost,
       }),
     );
   });
@@ -105,7 +122,7 @@ const player = {
 };
 
 export const updateUser: void = ({
-  state: {playerData, settings, skins, ...newState},
+  state: {playerData, settings, skins, envPosition, environment, ...newState},
 }) =>
   requestAnimationFrame(() => {
     data?.currentUser?.update({
@@ -113,6 +130,8 @@ export const updateUser: void = ({
       id: data.getUser,
       viewPortWidth: Dimensions.get('screen').width,
       viewPortHeight: Dimensions.get('screen').height,
+      envPosition,
+      environment,
     });
   });
 

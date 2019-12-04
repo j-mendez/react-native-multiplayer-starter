@@ -5,13 +5,13 @@
  * @flow
  */
 
-import React, {useEffect, useCallback} from 'react';
+import React, {useEffect} from 'react';
 import {Dimensions, Image, StyleSheet} from 'react-native';
 import {useStateValue} from 'state';
 import {ENV_COOLDOWN_DURATION} from 'logic';
 import {renderIf} from 'utils';
 
-const getEnvironment = env => {
+const getEnvironment = (env: string) => {
   switch (env) {
     case 'fire':
       return require('../assets/fire.gif');
@@ -22,7 +22,7 @@ const getEnvironment = env => {
   }
 };
 
-const setEnvironment = env => {
+const setEnvironment = (env: string) => {
   switch (env) {
     case 'fire':
       return '';
@@ -34,45 +34,50 @@ const setEnvironment = env => {
 };
 
 export default () => {
-  const [{environment, envPosition}, setState] = useStateValue();
-
-  const updateEnv = useCallback(() => {
-    setState({
-      environment: setEnvironment(environment),
-      envPosition: {
-        water: {
-          left:
-            !environment &&
-            Math.floor(Math.random() * Dimensions.get('screen').width - 20) + 1,
-          top: !environment && Math.floor(Math.random() * -251) + 1,
-        },
-      },
-    });
-  }, [environment, setState]);
+  const [{environment, envPosition, userEnvHost}, setState] = useStateValue();
 
   useEffect(
     () => {
-      const timedEnv = setInterval(updateEnv, ENV_COOLDOWN_DURATION);
+      const timedEnv =
+        userEnvHost &&
+        setInterval(
+          () =>
+            setState({
+              environment: setEnvironment(environment),
+              envPosition: {
+                left:
+                  Math.floor(
+                    Math.random() * Dimensions.get('screen').width - 20,
+                  ) + 1,
+                top: Math.floor(Math.random() * -251) + 1,
+                bottom:
+                  Math.floor(
+                    Math.random() * Dimensions.get('screen').height - 20,
+                  ) + 1,
+              },
+            }),
+          ENV_COOLDOWN_DURATION,
+        );
 
       return () => {
-        clearInterval(timedEnv);
+        userEnvHost && clearInterval(timedEnv);
       };
     },
-    [updateEnv],
+    [environment, setState, userEnvHost],
     [],
   );
 
   const styles = StyleSheet.create({
     water: {
       position: 'absolute',
-      left: envPosition?.water?.left || 221,
-      top: envPosition?.water?.top || -221,
+      left: envPosition?.left || 221,
+      top: envPosition?.top || -221,
       zIndex: 2,
     },
     fire: {
       position: 'absolute',
-      left: 120,
-      bottom: 300,
+      left: envPosition?.left || 120,
+      bottom: envPosition?.bottom || 300,
       zIndex: 2,
     },
   });

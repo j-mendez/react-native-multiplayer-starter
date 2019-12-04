@@ -41,7 +41,9 @@ const Player: () => React$Node = ({enemyState, sticky}) => {
           if (ko) {
             data?.currentUser?.remove();
             data?.currentGame?.child(enemyState.id).update({
-              kills: !enemyState.state.kills ? 1 : enemyState.state.kills + 1,
+              kills: !enemyState?.state?.kills
+                ? 1
+                : enemyState?.state?.kills + 1,
             });
             state?.settings?.sound && sound('death');
           }
@@ -60,7 +62,7 @@ const Player: () => React$Node = ({enemyState, sticky}) => {
   const attacking = enemyState ? enemyState.state?.attack : attack;
   const health = enemyState ? enemyState.state?.hp : hp;
   const playerColor = enemyState ? enemyState.state?.color : color;
-  const kills = enemyState ? enemyState.state.kills : state.kills;
+  const kills = enemyState ? enemyState?.state?.kills : state?.kills;
 
   const skinProps =
     !enemyState && hp === 3 ? selectedSkin(state?.skins, playerColor) : {};

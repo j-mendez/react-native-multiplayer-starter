@@ -49,6 +49,9 @@ const Game: () => React$Node = () => {
         oldKills = 0;
         setState({kills: 0, playerData: undefined, hp: 3});
         if (gameplayCount % 3 || gameplayCount === 1) {
+          if (__DEV__ && gameplayCount > 1) {
+            return;
+          }
           loadAd();
         }
       };

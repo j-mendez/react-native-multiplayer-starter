@@ -40,9 +40,10 @@ To change the firebase config location updated the google-services.json file for
 Web support aims for native speed so we try to use webassembly for this (Web support is in progress).
 For more info check out [assemblyscript](https://github.com/AssemblyScript/assemblyscript)
 
-## Serverless
+## Data Flow
 
-All game logic is handled inside the application without any servers outside of firebase realtime database.
+The database used is Realtime Database by firebase. The game is controlled through a shared game state between the client/players.Currently firebase prevents updating the same properties between two clients at the same time which is the reason for `state` and the top level meta info seperation.
+Currently trying to push how far you can get with clients managing the integrity of the logic needed for game play.
 
 ## Game Configuration
 

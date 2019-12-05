@@ -6,11 +6,12 @@
  */
 
 import React, {useEffect} from 'react';
-import {StyleSheet, Switch, View, Text, FlatList} from 'react-native';
+import {StyleSheet, Switch, View, Text} from 'react-native';
 import Button from 'react-native-really-awesome-button';
 import {useStateValue} from 'state';
-import {localStorage, getSettings, keyExtractor} from 'utils';
-import {menuButtonStyle} from 'style';
+import {FlatList} from 'components';
+import {localStorage, getSettings} from 'utils';
+import {menuButtonStyle, containerStyle} from 'style';
 
 function Item({item, updateData}) {
   return (
@@ -56,13 +57,11 @@ const Settings: () => React$Node = () => {
     [];
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Settings</Text>
+    <View style={containerStyle.container}>
       <FlatList
         data={dataSource}
+        title={'Settings'}
         renderItem={({item}) => <Item item={item} updateData={updateData} />}
-        keyExtractor={keyExtractor}
-        style={styles.listContainer}
       />
       <Button onPress={() => setState({scene: ''})} {...menuButtonStyle}>
         Home
@@ -74,15 +73,6 @@ const Settings: () => React$Node = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-  },
-  listContainer: {
-    padding: 2,
-  },
-  title: {
-    fontSize: 50,
-    fontWeight: 'bold',
-    marginBottom: 10,
   },
   item: {
     paddingVertical: 10,
@@ -94,11 +84,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     flex: 1,
     fontWeight: 'bold',
-  },
-  cellDetails: {
-    fontSize: 18,
-    flex: 1,
-    fontWeight: 'normal',
   },
   highlight: {
     backgroundColor: '#ccc',

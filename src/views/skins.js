@@ -9,9 +9,9 @@ import React, {useEffect} from 'react';
 import {StyleSheet, Switch, View, Text, FlatList} from 'react-native';
 import Button from 'react-native-really-awesome-button';
 import {useStateValue} from 'state';
-import {Player} from 'components';
-import {localStorage, getSkins, skinMap, keyExtractor} from 'utils';
-import {menuButtonStyle} from 'style';
+import {Player, Title} from 'components';
+import {localStorage, getSkins, skinMap} from 'utils';
+import {menuButtonStyle, containerStyle} from 'style';
 
 function Item({item, updateData, highScore}) {
   const {value, unlocked} = item.details;
@@ -72,9 +72,9 @@ const Skins: () => React$Node = () => {
     [];
 
   return (
-    <View style={styles.container}>
+    <View style={containerStyle.container}>
       <View style={styles.row}>
-        <Text style={styles.title}>Skins</Text>
+        <Title>Skins</Title>
         <Player sticky />
       </View>
       <FlatList
@@ -82,8 +82,6 @@ const Skins: () => React$Node = () => {
         renderItem={({item}) => (
           <Item item={item} updateData={updateData} highScore={highScore} />
         )}
-        keyExtractor={keyExtractor}
-        style={styles.listContainer}
       />
       <Button onPress={() => setState({scene: ''})} {...menuButtonStyle}>
         Home
@@ -93,18 +91,6 @@ const Skins: () => React$Node = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-  },
-  listContainer: {
-    padding: 2,
-  },
-  title: {
-    fontSize: 50,
-    fontWeight: 'bold',
-    flex: 1,
-  },
   item: {
     paddingVertical: 10,
     borderBottomWidth: 1,
@@ -124,7 +110,6 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-    marginBottom: 10,
     alignItems: 'center',
   },
 });

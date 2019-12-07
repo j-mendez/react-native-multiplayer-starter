@@ -21,6 +21,7 @@ Your next casual multiplayer game with react-native.
 6. game settings
 7. admob (ads)
 8. basic attack collision
+9. simple shared [state](https://github.com/jeffreymendez1993/react-estate)
 
 ## Native Dependencies
 

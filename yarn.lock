@@ -7016,12 +7016,10 @@ react-devtools-core@^3.6.3:
     shell-quote "^1.6.1"
     ws "^3.3.1"
 
-react-estate@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-estate/-/react-estate-1.0.1.tgz#27a4df7dc2c88b9d72729823b683e726816b1664"
-  integrity sha512-97+dIzhir2/mbJKrR7BNDZsd8VoA8OTeC6i5BzpZchwdwCIa534N3b6En95WVGB3mGftQHKik6zRP6d++OxTvA==
-  dependencies:
-    react "^16.12.0"
+react-estate@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-estate/-/react-estate-1.0.6.tgz#b5d5801feb7bc2f1a747d284a7ab8a4fda19de1d"
+  integrity sha512-OebuBl39mpK9dZ1L+VquH3ji+j9MizpZxNgnVyyIOecfnVdjImEzmUqv1CA7jPqkntidPYho3Q015uaB8Lg+OQ==
 
 react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
   version "16.12.0"
@@ -7128,7 +7126,7 @@ react-test-renderer@16.9.0:
     react-is "^16.9.0"
     scheduler "^0.15.0"
 
-react@16.12.0, react@^16.12.0:
+react@16.12.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
   integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==

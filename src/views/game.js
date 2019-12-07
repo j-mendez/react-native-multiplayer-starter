@@ -17,7 +17,7 @@ import {
   GameLobby,
 } from 'components';
 import {data, updateUser} from 'logic';
-import {useStateValue} from 'state';
+import {useStateValue} from 'react-estate';
 import {useDebounce} from 'use-debounce';
 import {getSettings, renderIf, selectedSkin, loadAd} from 'utils';
 import {containerStyle} from 'style';
@@ -27,7 +27,7 @@ let oldKills;
 
 const Game: () => React$Node = () => {
   const [state, setState] = useStateValue();
-  const gameState = useDebounce(state, 20, {leading: true, maxWait: 60})[0];
+  const gameState = useDebounce(state, 16, {leading: true, maxWait: 60})[0];
 
   useEffect(
     () => {

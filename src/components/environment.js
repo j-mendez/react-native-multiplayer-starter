@@ -7,7 +7,7 @@
 
 import React, {useEffect} from 'react';
 import {Dimensions, Image, StyleSheet} from 'react-native';
-import {useStateValue} from 'state';
+import {useStateValue} from 'react-estate';
 import {ENV_COOLDOWN_DURATION} from 'logic';
 import {renderIf} from 'utils';
 

@@ -8,7 +8,7 @@
 import React, {useEffect} from 'react';
 import {Animated, StyleSheet} from 'react-native';
 import {PanGestureHandler} from 'react-native-gesture-handler';
-import {useStateValue} from 'state';
+import {useStateValue} from 'react-estate';
 import {
   CONTROLLER_BOTTOM_POSITION,
   JOYSTICK_DISTANCE_HITSLOP,

@@ -7,7 +7,7 @@
 
 import React, {useMemo, useEffect} from 'react';
 import {Text, StyleSheet} from 'react-native';
-import {useStateValue} from 'state';
+import {useStateValue} from 'react-estate';
 import {data} from 'logic';
 import {renderIf} from 'utils';
 

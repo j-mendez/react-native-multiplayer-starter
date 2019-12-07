@@ -8,7 +8,7 @@
 import React, {useEffect} from 'react';
 import {FlatList, StyleSheet, ImageBackground, View, Text} from 'react-native';
 import Button from 'react-native-really-awesome-button';
-import {useStateValue} from 'state';
+import {useStateValue} from 'react-estate';
 import {Player, JoyStick, HighScore} from 'components';
 import {menuButtonStyle, containerStyle} from 'style';
 import {MENU_DATA} from 'logic';

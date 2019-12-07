@@ -6,7 +6,7 @@
  */
 
 import {Landing, Leaderboard, Game, Settings, Skins} from 'views';
-import {useStateValue} from 'state';
+import {useStateValue} from 'react-estate';
 
 export default function() {
   switch (useStateValue()[0].scene) {

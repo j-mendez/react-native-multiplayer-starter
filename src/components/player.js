@@ -8,7 +8,7 @@
 import React, {useMemo} from 'react';
 import {StyleSheet, Animated} from 'react-native';
 import {data, getColor, _translateX, _translateY} from 'logic';
-import {useStateValue} from 'state';
+import {useStateValue} from 'react-estate';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 import {sound, selectedSkin} from 'utils';
 import Powerup from './powerup';

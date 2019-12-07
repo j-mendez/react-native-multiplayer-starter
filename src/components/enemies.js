@@ -6,7 +6,7 @@
  */
 
 import React, {memo} from 'react';
-import {useStateValue} from 'state';
+import {useStateValue} from 'react-estate';
 import Player from './player';
 
 const Enemy = memo(Player);

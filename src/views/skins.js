@@ -8,7 +8,7 @@
 import React, {useEffect} from 'react';
 import {StyleSheet, Switch, View, Text, FlatList} from 'react-native';
 import Button from 'react-native-really-awesome-button';
-import {useStateValue} from 'state';
+import {useStateValue} from 'react-estate';
 import {Player, Title} from 'components';
 import {localStorage, getSkins, skinMap} from 'utils';
 import {menuButtonStyle, containerStyle} from 'style';

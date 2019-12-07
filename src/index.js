@@ -7,12 +7,13 @@
 
 import React from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
-import {StateProvider} from 'state';
+import {StateProvider} from 'react-estate';
 import {containerStyle} from 'style';
+import {state} from 'assembly';
 import App from './app';
 
 const Index: () => React$Node = () => (
-  <StateProvider>
+  <StateProvider defaultState={state}>
     <StatusBar barStyle="dark-content" />
     <SafeAreaView style={containerStyle.base}>
       <App />

@@ -8,7 +8,7 @@
 import React from 'react';
 import {Animated, StyleSheet} from 'react-native';
 import {TapGestureHandler, State} from 'react-native-gesture-handler';
-import {useStateValue} from 'state';
+import {useStateValue} from 'react-estate';
 import {sound} from 'utils';
 import {ATTACK_CLEAR_DURATION, CONTROLLER_BOTTOM_POSITION} from 'logic';
 

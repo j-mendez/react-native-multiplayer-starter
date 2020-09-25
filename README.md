@@ -25,8 +25,6 @@ Your next casual multiplayer game with react-native.
 
 ## Native Dependencies
 
--- native modules
-
 1. [firebase](https://invertase.io/oss/react-native-firebase)
 2. [sounds](https://github.com/zmxv/react-native-sound)
 3. [haptic-feedback](https://github.com/milk-and-cookies-io/react-native-haptic-feedback)
